@@ -1,9 +1,17 @@
+call plug#begin('~/.vim/plugged')
+
+Plug 'https://github.com/rking/ag.vim'
+
+call plug#end()
+
 colorscheme badwolf     " color scheme
 syntax enable           " enable syntax processing
 set tabstop=4           " number of visual spaces per tab
+set shiftwidth=4        " affects what happens when you press >>, << or ==. It also affects how automatic indentation works
 set softtabstop=4       " number of spaces in tab when editing
 set expandtab           " tabs are spaces
 set number              " show line numbers
+set relativenumber      " turn on relative numbering
 set showcmd             " shows the last command entered in bottom right
 set cursorline          " highlights current line
 filetype indent on      " load filetype-specific indent files
@@ -12,6 +20,9 @@ set lazyredraw          " redraw only when need to
 set showmatch           " highlight matching parenthesis
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
+
+" leader shortcuts
+let mapleader=","       " leader is comma
 
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
@@ -41,12 +52,7 @@ nnoremap ^ <nop>
 
 " highlight last inserted text
 nnoremap gV `[v`]
-
-" leader shortcuts
-let mapleader=","       " leader is comma
-
-" toggle gundo
-nnoremap <leader>u :GundoToggle<CR>
+inoremap jk <esc> 
 
 " edit vimrc/zshrc and load vimrc bindings
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
@@ -55,3 +61,7 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 
 " save session
 nnoremap <leader>s :mksession<CR>
+
+" open ag.vim
+nnoremap <leader>a :Ag
+
