@@ -2,6 +2,8 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'https://github.com/rking/ag.vim'
 
+Plug 'https://github.com/sjbach/lusty'
+
 call plug#end()
 
 colorscheme badwolf     " color scheme
@@ -20,6 +22,7 @@ set lazyredraw          " redraw only when need to
 set showmatch           " highlight matching parenthesis
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
+set hidden              " hides the buffer instead of closing it when new window is opened
 
 " leader shortcuts
 let mapleader=","       " leader is comma
