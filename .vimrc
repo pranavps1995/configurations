@@ -4,6 +4,8 @@ Plug 'https://github.com/rking/ag.vim'
 
 Plug 'https://github.com/sjbach/lusty'
 
+Plug 'https://github.com/kien/ctrlp.vim'
+
 call plug#end()
 
 colorscheme badwolf     " color scheme
@@ -23,7 +25,8 @@ set showmatch           " highlight matching parenthesis
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 set hidden              " hides the buffer instead of closing it when new window is opened
-
+set showmode            " If in insert, visual or replace mode, puts a message on last line
+set laststatus=2        " enable status line
 " leader shortcuts
 let mapleader=","       " leader is comma
 
